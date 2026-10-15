@@ -161,5 +161,117 @@ button {
 
 /* Область ввода/просмотра заметки */
 .editor {
-    
+    display: grid;
+    grid-template-rows: 50px calc(100vh - 320px) 50px 50px 50px;
+    padding: 50px;
+    gap: 12px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.editor__question,
+.editor__answer,
+.editor__tags-add,
+.editor__tags-type_answer {
+    width: 100%;
+    max-width: 900px;
+}
+
+/* Поле вопроса */
+.editor__question-input {
+    width: 100%;
+    height: 100%;
+    padding: 0 16px;
+    color: #302c35;
+    font-size: 20px;
+    background: #fbfafc;
+    border: 1px solid #ded9e8;
+    border-radius: 8px;
+    outline: none;
+}
+
+.editor__question-input:focus {
+    border-color: #7945df;
+    box-shadow: 0 0 0 3px rgb(121 69 223 / 10%);
+}
+
+.editor__question-input::placeholder {
+    color: #9a94a3;
+}
+
+.editor__answer-input {
+    width: 100%;
+    height: 100%;
+    padding: 0 16px;
+    color: #302c35;
+    font-size: 14px;
+    background: #fbfafc;
+    border: 1px solid #ded9e8;
+    border-radius: 8px;
+    outline: none;
+}   
+
+.editor__tags-add {
+    display: flex;
+    gap: 10px;
+}
+
+.editor__tags-input {
+    flex: 1;
+    height: 100%;
+    padding: 0 12px;
+    color: #302c35;
+    font-size: 13px;
+    background: #fbfafc;
+    border: 1px solid #ded9e8;
+    border-radius: 8px;
+    outline: none;
+}
+
+.editor__tags-input:focus {
+    border-color: #7945df;
+    box-shadow: 0 0 0 3px rgb(121 69 223 / 10%);
+}
+
+.editor__tags-input::placeholder {
+    color: #9a94a3;
+}
+
+.editor__tags-button,
+.editor__save-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 16px;
+    color: #fff;
+    font-size: 13px;
+    background: #7945df;
+    border-radius: 8px;
+}
+
+.editor__tags-button:hover,
+.editor__save-button:hover {
+    background: #6636c5;
+}
+
+/* Тип ответа располагается по центру своей строки */
+.editor__tags-type_answer {
+    color: #514b59;
+    font-size: 13px;
+}
+
+.editor__tags-type_answer input[type="radio"] {
+    accent-color: #7945df;
+}
+
+.editor__tags-type_answer label {
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+/* Кнопка сохранения — внизу, по центру, ширина 50% */
+.editor__save-button {
+    justify-self: center;
+    width: 50%;
+    font-size: 14px;
 }
