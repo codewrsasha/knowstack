@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    cursor: pointer;
+}
+
+.app {
+    font-family: "Roboto", sans-serif;
+    display: grid;
+    grid-template-columns: 54px 300px auto;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Левая фиолетовая панель */
+.side_bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 0;
+    padding: 15px 0;
+    background: #7945df;
+}
+
+.side_bar_icon {
+    display: flex;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    color: #fff;
+    font-size: 22px;
+    border-radius: 7px;
+}
+.side_bar_icon:hover {
+    background: #2d1d4e;
+}
+
+/* Колонка со списком заметок */
+.nav_bar {
+    display: grid;
+    grid-template-rows: 50px calc(100vh - 50px);
+    background: #f0f2f3;
+}
+
+.nav_bar_controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    min-width: 0;
+    padding: 0 10px;
+    background: #f6f7f8;
+    border-bottom: 1px solid #d5d7da;
+}
+
+.nav_bar_input {
+    width: 100%;
+    height: 29px;
+    padding: 5px 25px 5px 7px;
+    color: #333;
+    font-size: 11px;
+    background: #fafafa;
+    border: 1px solid #d5d7da;
+    border-radius: 4px;
+    outline: none;
+}
+
+.nav_bar_input:focus {
+    border-color: #7945df;
+}
+
+.nav_bar_search-icon {
+    height: 29px;
+    padding: 5px 10px;
+    color: #fff;
+    font-size: 11px;
+    background: #9270df;
+    border: 0;
+    border-radius: 4px;
+}
+
+.nav_bar_search-icon:hover {
+    background: #7848d7;
+}
+
+/* Панель прокрутки */
+.navbar__scroll {
+    min-height: 0;
+    overflow-y: auto;
+    scrollbar-color: #c5c5ca transparent;
+}
+
+.navbar__tags {
+    width: 100%;
+}
+
+.navbar__tags-title {
+    padding: 9px 14px;
+    color: #4b4850;
+    font-size: 11px;
+    font-weight: bold;
+    background: #e1e3e5;
+    border-bottom: 1px solid #d0d2d4;
+}
+
+.navbar__tags-note,
+.navbar__tags-note_active {
+    display: grid;
+    grid-template-columns: 58px auto;
+    min-height: 72px;
+    background: #f0f2f3;
+    border-bottom: 1px solid #d2d4d6;
+    border-left: 4px solid transparent;
+}
+
+.navbar__tags-note_active {
+    background: #fff;
+    border-left-color: #7848d7;
+}
+
+.navbar__tags-note:hover {
+    background: #fff;
+    border-left-color: #9b7be4;
+}
+
+.navbar__tags-note-timeago {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #d8dadd;
+}
+
+.navbar__tags-note-timeago-num {
+    color: #302d33;
+    font-size: 22px;
+}
+
+.navbar__tags-note-timeago-unit {
+    color: #625e66;
+    font-size: 10px;
+}
+
+.navbar__tags-note-discription {
+    align-self: center;
+    padding: 10px 12px;
+    font-size: 11px;
+}
+
+.navbar__tags-note-discription h3 {
+    margin-bottom: 5px;
+    color: #29262d;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+
+/* Область ввода/просмотра заметки */
+.editor {
+    
+}
