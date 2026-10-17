@@ -276,6 +276,11 @@ a:clicked {
     background: #6636c5;
 }
 
+.editor__delete-button:active,
+.editor__save-button:active {
+    transform: translateY(1px);
+}
+
 .editor__tags-type_answer {
     color: #514b59;
     font-size: 14px;
@@ -357,4 +362,106 @@ a:clicked {
 .navbar__tags-test_active p {
     color: #827c88;
     font-size: 10px;
+}
+
+/* Область прохождения тестов */
+
+.test {
+    display: grid;
+    grid-template-rows: 1fr 1fr 56px;
+    gap: 28px;
+    padding: 50px;
+    overflow-y: auto;
+    background: #fff;
+}
+
+.test__question {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 28px 32px;
+    text-align: center;
+    background: #fbfafc;
+    border: 1px solid #ded9e8;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgb(48 44 53 / 4%);
+}
+
+.test__question h2 {
+    color: #46384b;
+    font-weight: bold;
+}
+
+.test__answers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.test__answer1,
+.test__answer2,
+.test__answer3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 22px 18px;
+    color: #302c35;
+    font-size: 15px;
+    text-align: center;
+    background: #fbfafc;
+    border: 1px solid #ded9e8;
+    border-radius: 12px;
+}
+
+.test__answer1:hover,
+.test__answer2:hover,
+.test__answer3:hover {
+    background: #f6f1ff;
+    border-color: #bba5ed;
+}
+
+.test__controls {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 12px;
+}
+
+.test__next,
+.test__finish {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 12px 18px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 1px solid transparent;
+    border-radius: 8px;
+}
+
+.test__next {
+    color: #fff;
+    background: #7945df;
+    border-color: #7945df;
+}
+
+.test__next:hover {
+    background: #6636c5;
+    border-color: #6636c5;
+}
+
+.test__finish {
+    color: #6443a7;
+    background: #f0eafb;
+    border-color: #ded2f5;
+}
+
+.test__finish:hover {
+    background: #e7def8;
+    border-color: #c7b4ef;
+}
+
+.test__next:active,
+.test__finish:active {
+    transform: translateY(1px);
 }

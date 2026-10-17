@@ -19,7 +19,7 @@
             <!-- </div> -->
         </section>
 
-        <!-- Колонка со списком заметок -->
+        <!-- Колонка со списком тестов -->
         <section class="nav_bar">
             <div class="nav_bar_controls">
                     <input class="nav_bar_input" type="search" placeholder="Поиск тега для теста" aria-label="Поиск тега для теста">
@@ -83,9 +83,20 @@
             </div>
         </section>
 
-        <!-- Область ввода/просмотра заметки -->
+        <!-- Область для прохождения тестов -->
         <section class="test">
-                        
+            <div class="test__question">
+                <h2>Что такое SQL?</h2>
+            </div>
+            <div class="test__answers">
+                <button class="test__answer1">это язык, который используют для работы с реляционными базами данных.</button>
+                <button class="test__answer2">это язык, с помощью которого создают структуру и описывают содержимое веб-страниц.</button>
+                <button class="test__answer3">это высокоуровневый интерпретируемый язык программирования общего назначения.</button>
+            </div>
+            <div class="test__controls">
+                <button class="test__next">Следующий вопрос</button>
+                <button class="test__finish">Завершить тест</button>
+            </div>
         </section>
     </main>
 </body>
