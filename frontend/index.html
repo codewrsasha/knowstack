@@ -12,10 +12,10 @@
         <!-- Левая фиолетовая панель -->
         <section class="side_bar">
             <div class="side_bar_top">
-                <div class="side_bar_icon menu-icon">|||</div>
+                <div class="side_bar_icon test-icon"><a href="./test.html">|||</a></div>
             </div>
             <div class="side_bar_bottom">
-                <div class="side_bar_icon settings-icon">|||</div>
+                <div class="side_bar_icon settings-icon">+</div>
             </div>
         </section>
 
@@ -27,7 +27,7 @@
             </div>
 
             <!-- Панель прокрутки -->
-            <div class="navbar__scroll">
+            <div class="navbar__scroll-questions">
                 <div class="navbar__tags">
                     <div class="navbar__tags-title">SQL</div>
 
@@ -153,18 +153,20 @@
                 <input class="editor__question-input" type="text" placeholder="Введите вопрос">
             </div>
             <div class="editor__answer">
-                <input class="editor__answer-input" type="text" placeholder="Введите ответ">
+                <textarea class="editor__answer-input" placeholder="Введите ответ"></textarea>
             </div>
-            <div class="editor__tags-add">
-                <input class="editor__tags-input" type="text" placeholder="Введите тег">
-                <button class="editor__tags-button">Добавить тег</button>
+            <div class="editor__tags">
+                <input class="editor__tags-input" type="text" placeholder="Введите теги разделяя их запятой">                
             </div>
             <div class="editor__tags-type_answer">
-                <input type="radio" name="type_answer" value="definition" checked> Определение
-                <input type="radio" name="type_answer" value="list"> Перечисление
-                <input type="radio" name="type_answer" value="character"> Характеристика
+                <input type="radio" class="editor__tags-type_answer-input" name="type_answer" value="definition" checked> Определение
+                <input type="radio" class="editor__tags-type_answer-input" name="type_answer" value="list"> Перечисление
+                <input type="radio" class="editor__tags-type_answer-input" name="type_answer" value="character"> Характеристика
             </div>
-            <button class="editor__save-button">Сохранить</button>
+            <div class="editor__save">
+                <button class="editor__save-button">Сохранить</button>
+                <button class="editor__delete-button">Удалить</button>
+            </div>            
         </section>
     </main>
 </body>
