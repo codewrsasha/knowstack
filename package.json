@@ -1,0 +1,29 @@
+{
+  "name": "knowstack",
+  "version": "1.0.0",
+  "description": "Knowstack is a personal knowledge base that turns everyday questions into lasting knowledge.  Save questions and answers, organize them with tags, and test yourself with quizzes generated from your own notes.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codewrsasha/knowstack.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/codewrsasha/knowstack/issues"
+  },
+  "homepage": "https://github.com/codewrsasha/knowstack#readme",
+  "dependencies": {
+    "dotenv": "^18.0.8",
+    "express": "^5.3.0",
+    "pg": "^8.23.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
