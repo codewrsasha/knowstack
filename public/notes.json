@@ -1,0 +1,51 @@
+
+[
+  {
+    "id": 1,
+    "question": "Что такое HTML?",
+    "answer": "Язык разметки для создания структуры веб-страниц.",
+    "answer_type": "definition",
+    "tags": ["HTML", "Веб-разработка"],
+    "created_at": "2026-10-18T00:00:00Z"
+  },
+  {
+    "id": 2,
+    "question": "Что такое CSS?",
+    "answer": "Язык стилей для оформления веб-страниц.",
+    "answer_type": "definition",
+    "tags": ["CSS", "Веб-разработка"],
+    "created_at": "2026-09-18T00:00:00Z"
+  },
+  {
+    "id": 3,
+    "question": "Какие типы данных есть в JavaScript?",
+    "answer": "String, Number, Boolean, Undefined, Null, BigInt, Symbol, Object.",
+    "answer_type": "list",
+    "tags": ["JavaScript"],
+    "created_at": "2026-10-19T00:00:00Z"
+  },
+  {
+    "id": 4,
+    "question": "Что такое docker?",
+    "answer": "Платформа для автоматизации создания, доставки и запуска контейнеров.",
+    "answer_type": "definition",
+    "tags": ["Docker", "Базы данных"],
+    "created_at": "2026-08-01T00:00:00Z"
+  },
+  {
+    "id": 5,
+    "question": "Что такое postgresql?",
+    "answer": "Объектно-реляционная система управления базами данных.",
+    "answer_type": "definition",
+    "tags": ["SQL", "Базы данных"],
+    "created_at": "2026-10-20T00:00:00Z"
+  },
+  {
+    "id": 6,
+    "question": "Какие бывают SQL-функции?",
+    "answer": "SELECT, INSERT, UPDATE, DELETE",
+    "answer_type": "list",
+    "tags": ["SQL", "Базы данных"],
+    "created_at": "2016-10-20T00:00:00Z"
+  }
+]
