@@ -124,6 +124,7 @@ a:clicked {
     background: #f0f2f3;
     border-bottom: 1px solid #d2d4d6;
     border-left: 4px solid transparent;
+    cursor: pointer;
 }
 
 .navbar__tags-note_active {
@@ -146,12 +147,12 @@ a:clicked {
 
 .navbar__tags-note-timeago-num {
     color: #302d33;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .navbar__tags-note-timeago-unit {
     color: #625e66;
-    font-size: 10px;
+    font-size: 8px;
 }
 
 .navbar__tags-note-discription {
@@ -322,6 +323,7 @@ a:clicked {
     background: #f0f2f3;
     border-bottom: 1px solid #d9dadd;
     border-left: 4px solid transparent;
+    cursor: pointer;
 }
 
 .navbar__tags-test_active { background: #fff; border-left-color: #7848d7; }
