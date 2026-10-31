@@ -36,9 +36,16 @@ button {
     font-size: 22px;
     border-radius: 8px;
     background: #9270df;
+    border: 1px solid transparent;
+    font-weight: bold;
+    
 }
 .side_bar_icon:hover {
     background: #4d3282;
+}
+
+.side_bar_icon:active{
+    transform: translateY(1px);
 }
 
 a {
@@ -147,12 +154,12 @@ a:clicked {
 
 .navbar__tags-note-timeago-num {
     color: #302d33;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .navbar__tags-note-timeago-unit {
     color: #625e66;
-    font-size: 8px;
+    font-size: 9px;
 }
 
 .navbar__tags-note-discription {

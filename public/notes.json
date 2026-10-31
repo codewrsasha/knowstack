@@ -1,51 +1,317 @@
-
 [
   {
     "id": 1,
     "question": "Что такое HTML?",
-    "answer": "Язык разметки для создания структуры веб-страниц.",
+    "answer": "Язык разметки, задающий структуру веб-страницы.",
     "answer_type": "definition",
-    "tags": ["HTML", "Веб-разработка"],
-    "created_at": "2026-10-18T00:00:00Z"
+    "tags": [
+      "HTML",
+      "CSS"
+    ],
+    "created_at": "2026-10-01T00:00:00Z"
   },
   {
     "id": 2,
-    "question": "Что такое CSS?",
-    "answer": "Язык стилей для оформления веб-страниц.",
+    "question": "Что такое HTML-элемент?",
+    "answer": "Часть документа, обычно состоящая из тегов и содержимого.",
     "answer_type": "definition",
-    "tags": ["CSS", "Веб-разработка"],
-    "created_at": "2026-09-18T00:00:00Z"
+    "tags": [
+      "HTML"
+    ],
+    "created_at": "2026-10-02T00:00:00Z"
   },
   {
     "id": 3,
-    "question": "Какие типы данных есть в JavaScript?",
-    "answer": "String, Number, Boolean, Undefined, Null, BigInt, Symbol, Object.",
+    "question": "Какие теги используются для заголовков?",
+    "answer": "h1, h2, h3, h4, h5, h6.",
     "answer_type": "list",
-    "tags": ["JavaScript"],
-    "created_at": "2026-10-19T00:00:00Z"
+    "tags": [
+      "HTML",
+      "CSS"
+    ],
+    "created_at": "2026-10-03T00:00:00Z"
   },
   {
     "id": 4,
-    "question": "Что такое docker?",
-    "answer": "Платформа для автоматизации создания, доставки и запуска контейнеров.",
-    "answer_type": "definition",
-    "tags": ["Docker", "Базы данных"],
-    "created_at": "2026-08-01T00:00:00Z"
+    "question": "Какие основные элементы есть в структуре HTML-документа?",
+    "answer": "html, head, title, body.",
+    "answer_type": "list",
+    "tags": [
+      "HTML"
+    ],
+    "created_at": "2026-10-04T00:00:00Z"
   },
   {
     "id": 5,
-    "question": "Что такое postgresql?",
-    "answer": "Объектно-реляционная система управления базами данных.",
-    "answer_type": "definition",
-    "tags": ["SQL", "Базы данных"],
-    "created_at": "2026-10-20T00:00:00Z"
+    "question": "Охарактеризуйте семантическую разметку.",
+    "answer": "Использует элементы по их смыслу, например header, nav, main и footer.",
+    "answer_type": "characteristic",
+    "tags": [
+      "HTML",
+      "CSS"
+    ],
+    "created_at": "2026-10-05T00:00:00Z"
   },
   {
     "id": 6,
-    "question": "Какие бывают SQL-функции?",
-    "answer": "SELECT, INSERT, UPDATE, DELETE",
+    "question": "Охарактеризуйте элемент form.",
+    "answer": "Предназначен для сбора и отправки данных, введённых пользователем.",
+    "answer_type": "characteristic",
+    "tags": [
+      "HTML"
+    ],
+    "created_at": "2026-10-06T00:00:00Z"
+  },
+  {
+    "id": 7,
+    "question": "Что такое CSS?",
+    "answer": "Язык стилей для оформления HTML-страниц.",
+    "answer_type": "definition",
+    "tags": [
+      "CSS",
+      "JavaScript"
+    ],
+    "created_at": "2026-10-07T00:00:00Z"
+  },
+  {
+    "id": 8,
+    "question": "Что такое CSS-селектор?",
+    "answer": "Шаблон для выбора элементов, к которым применяются стили.",
+    "answer_type": "definition",
+    "tags": [
+      "CSS"
+    ],
+    "created_at": "2026-10-08T00:00:00Z"
+  },
+  {
+    "id": 9,
+    "question": "Какие способы подключения CSS существуют?",
+    "answer": "Внешний файл, тег style, атрибут style.",
     "answer_type": "list",
-    "tags": ["SQL", "Базы данных"],
-    "created_at": "2016-10-20T00:00:00Z"
+    "tags": [
+      "CSS",
+      "JavaScript"
+    ],
+    "created_at": "2026-10-09T00:00:00Z"
+  },
+  {
+    "id": 10,
+    "question": "Какие единицы измерения часто используются в CSS?",
+    "answer": "px, %, em, rem, vw, vh.",
+    "answer_type": "list",
+    "tags": [
+      "CSS"
+    ],
+    "created_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": 11,
+    "question": "Охарактеризуйте Flexbox.",
+    "answer": "Модель компоновки для размещения элементов в строке или столбце и распределения пространства.",
+    "answer_type": "characteristic",
+    "tags": [
+      "CSS",
+      "JavaScript"
+    ],
+    "created_at": "2026-10-11T00:00:00Z"
+  },
+  {
+    "id": 12,
+    "question": "Охарактеризуйте Grid Layout.",
+    "answer": "Двумерная модель компоновки элементов по строкам и столбцам.",
+    "answer_type": "characteristic",
+    "tags": [
+      "CSS"
+    ],
+    "created_at": "2026-10-12T00:00:00Z"
+  },
+  {
+    "id": 13,
+    "question": "Что такое JavaScript?",
+    "answer": "Язык программирования для добавления интерактивности веб-страницам.",
+    "answer_type": "definition",
+    "tags": [
+      "JavaScript",
+      "Docker"
+    ],
+    "created_at": "2026-10-13T00:00:00Z"
+  },
+  {
+    "id": 14,
+    "question": "Что такое функция в JavaScript?",
+    "answer": "Блок кода, который можно вызвать для выполнения определённой задачи.",
+    "answer_type": "definition",
+    "tags": [
+      "JavaScript"
+    ],
+    "created_at": "2026-10-14T00:00:00Z"
+  },
+  {
+    "id": 15,
+    "question": "Какие примитивные типы данных есть в JavaScript?",
+    "answer": "string, number, bigint, boolean, undefined, symbol, null.",
+    "answer_type": "list",
+    "tags": [
+      "JavaScript",
+      "Docker"
+    ],
+    "created_at": "2026-10-15T00:00:00Z"
+  },
+  {
+    "id": 16,
+    "question": "Какие ключевые слова объявляют переменные?",
+    "answer": "let, const, var.",
+    "answer_type": "list",
+    "tags": [
+      "JavaScript"
+    ],
+    "created_at": "2026-10-16T00:00:00Z"
+  },
+  {
+    "id": 17,
+    "question": "Охарактеризуйте Promise.",
+    "answer": "Объект, представляющий результат асинхронной операции.",
+    "answer_type": "characteristic",
+    "tags": [
+      "JavaScript",
+      "Docker"
+    ],
+    "created_at": "2026-10-17T00:00:00Z"
+  },
+  {
+    "id": 18,
+    "question": "Охарактеризуйте DOM.",
+    "answer": "Представление HTML-документа в виде дерева объектов.",
+    "answer_type": "characteristic",
+    "tags": [
+      "JavaScript"
+    ],
+    "created_at": "2026-10-18T00:00:00Z"
+  },
+  {
+    "id": 19,
+    "question": "Что такое Docker?",
+    "answer": "Платформа для создания, доставки и запуска приложений в контейнерах.",
+    "answer_type": "definition",
+    "tags": [
+      "Docker",
+      "Базы данных"
+    ],
+    "created_at": "2026-10-19T00:00:00Z"
+  },
+  {
+    "id": 20,
+    "question": "Что такое Docker-образ?",
+    "answer": "Шаблон с файлами и настройками, необходимыми для создания контейнера.",
+    "answer_type": "definition",
+    "tags": [
+      "Docker"
+    ],
+    "created_at": "2026-10-20T00:00:00Z"
+  },
+  {
+    "id": 21,
+    "question": "Какие команды используются для управления контейнерами?",
+    "answer": "docker run, docker start, docker stop, docker ps.",
+    "answer_type": "list",
+    "tags": [
+      "Docker",
+      "Базы данных"
+    ],
+    "created_at": "2026-10-21T00:00:00Z"
+  },
+  {
+    "id": 22,
+    "question": "Какие инструкции часто встречаются в Dockerfile?",
+    "answer": "FROM, RUN, COPY, WORKDIR, CMD, EXPOSE.",
+    "answer_type": "list",
+    "tags": [
+      "Docker"
+    ],
+    "created_at": "2026-10-22T00:00:00Z"
+  },
+  {
+    "id": 23,
+    "question": "Охарактеризуйте Docker Compose.",
+    "answer": "Инструмент для описания и запуска приложения из нескольких сервисов.",
+    "answer_type": "characteristic",
+    "tags": [
+      "Docker",
+      "Базы данных"
+    ],
+    "created_at": "2026-10-23T00:00:00Z"
+  },
+  {
+    "id": 24,
+    "question": "Охарактеризуйте Docker volume.",
+    "answer": "Механизм хранения данных, сохраняющихся независимо от жизненного цикла контейнера.",
+    "answer_type": "characteristic",
+    "tags": [
+      "Docker"
+    ],
+    "created_at": "2026-10-24T00:00:00Z"
+  },
+  {
+    "id": 25,
+    "question": "Что такое база данных?",
+    "answer": "Организованная совокупность данных для хранения и обработки.",
+    "answer_type": "definition",
+    "tags": [
+      "Базы данных",
+      "HTML"
+    ],
+    "created_at": "2026-10-25T00:00:00Z"
+  },
+  {
+    "id": 26,
+    "question": "Что такое СУБД?",
+    "answer": "Программная система для создания, хранения, изменения и извлечения данных.",
+    "answer_type": "definition",
+    "tags": [
+      "Базы данных"
+    ],
+    "created_at": "2026-10-26T00:00:00Z"
+  },
+  {
+    "id": 27,
+    "question": "Какие основные команды SQL используются для работы с данными?",
+    "answer": "SELECT, INSERT, UPDATE, DELETE.",
+    "answer_type": "list",
+    "tags": [
+      "Базы данных",
+      "HTML"
+    ],
+    "created_at": "2026-10-27T00:00:00Z"
+  },
+  {
+    "id": 28,
+    "question": "Какие ограничения целостности часто применяются в SQL?",
+    "answer": "NOT NULL, UNIQUE, PRIMARY KEY, FOREIGN KEY, CHECK.",
+    "answer_type": "list",
+    "tags": [
+      "Базы данных"
+    ],
+    "created_at": "2026-10-28T00:00:00Z"
+  },
+  {
+    "id": 29,
+    "question": "Охарактеризуйте PostgreSQL.",
+    "answer": "Объектно-реляционная система управления базами данных с открытым исходным кодом.",
+    "answer_type": "characteristic",
+    "tags": [
+      "Базы данных",
+      "HTML"
+    ],
+    "created_at": "2026-10-01T00:00:00Z"
+  },
+  {
+    "id": 30,
+    "question": "Охарактеризуйте индекс базы данных.",
+    "answer": "Структура, ускоряющая поиск данных, но требующая дополнительного места.",
+    "answer_type": "characteristic",
+    "tags": [
+      "Базы данных"
+    ],
+    "created_at": "2026-10-02T00:00:00Z"
   }
 ]
