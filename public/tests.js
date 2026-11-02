@@ -1,7 +1,8 @@
-
 const testsContainer = document.querySelector(".navbar__scroll-tests");
+const testSection = document.querySelector(".test");
 
 let notes = [];
+let selectedTag = null;
 
 // Загружаем заметки из JSON-файла
 async function loadNotes() {
@@ -35,12 +36,15 @@ function createTestElement(tag, tagNotes) {
     questionsCount.textContent = `${tagNotes.length} вопросов`;
 
     info.append(title, questionsCount);
-
     testElement.append(icon, info);
+
+    // Проверка нажатия на тест и открытия теста
+    testElement.addEventListener("click", () => {
+        openTest(tag, testElement);
+    });
 
     return testElement;
 }
-
 
 function renderTests() {
     testsContainer.replaceChildren();
@@ -92,6 +96,25 @@ function renderTests() {
     }
 
     testsContainer.append(recentTests);
+}
+
+// Открытие выбранного теста по нажатию
+function openTest(tag, testElement) {
+    selectedTag = tag;
+
+    // Убираем выделение со всех тестов
+    const testElements = testsContainer.querySelectorAll(".navbar__tags-test");
+    testElements.forEach((element) => {
+        element.classList.remove("navbar__tags-test_active");
+    });
+
+    // Выделяем выбранный тест
+    testElement.classList.add("navbar__tags-test_active");
+
+    // Очищаем область теста
+    testSection.replaceChildren();
+
+    console.log("Выбран тест:", selectedTag);
 }
 
 
