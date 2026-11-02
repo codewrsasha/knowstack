@@ -3,6 +3,7 @@ const testSection = document.querySelector(".test");
 
 let notes = [];
 let selectedTag = null;
+let currentQuestion = null;
 
 // Загружаем заметки из JSON-файла
 async function loadNotes() {
@@ -114,7 +115,55 @@ function openTest(tag, testElement) {
     // Очищаем область теста
     testSection.replaceChildren();
 
+    renderActiveTest();
+
     console.log("Выбран тест:", selectedTag);
+}
+
+// Отрисовываем HTML теста
+function renderActiveTest() {
+    // Блок с вопросом
+    const questionBlock = document.createElement("div");
+    questionBlock.className = "test__question";
+
+    const questionTitle = document.createElement("h2");
+    questionTitle.textContent = "Здесь появится вопрос";
+
+    questionBlock.append(questionTitle);
+
+    // Блок с вариантами ответов
+    const answersBlock = document.createElement("div");
+    answersBlock.className = "test__answers";
+
+    // Создаём три кнопки ответов
+    for (let i = 1; i <= 3; i++) {
+        const answerButton = document.createElement("button");
+        answerButton.className = `test__answer${i}`;
+        answerButton.textContent = `Вариант ответа ${i}`;
+
+        answersBlock.append(answerButton);
+    }
+
+    // Блок с кнопками управления
+    const controlsBlock = document.createElement("div");
+    controlsBlock.className = "test__controls";
+
+    const nextButton = document.createElement("button");
+    nextButton.className = "test__next";
+    nextButton.textContent = "Следующий вопрос";
+
+    const finishButton = document.createElement("button");
+    finishButton.className = "test__finish";
+    finishButton.textContent = "Завершить тест";
+
+    controlsBlock.append(nextButton, finishButton);
+
+    // Добавляем все блоки в секцию теста
+    testSection.append(
+        questionBlock,
+        answersBlock,
+        controlsBlock
+    );
 }
 
 
