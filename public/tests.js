@@ -99,6 +99,56 @@ function renderTests() {
     testsContainer.append(recentTests);
 }
 
+function getRandomQuestion() {
+    // Получаем все заметки по выбранному тегу
+    const tagNotes = notes.filter((note) => {
+        return note.tags.includes(selectedTag);
+    });
+
+    if (tagNotes.length === 0) {
+        return null;
+    }
+
+    // Выбираем случайную заметку
+    const randomIndex = Math.floor(Math.random() * tagNotes.length);
+    return tagNotes[randomIndex];
+}
+
+function getRandomAnswers(question) {
+    // находим ответы с одинаковыми типами 
+    const wrongAnswers = notes.filter((note) => {
+        return (
+            note.id !== question.id &&
+            note.answer_type === question.answer_type &&
+            note.answer.trim() !== "" &&
+            note.answer !== question.answer
+        );
+    });
+    if (wrongAnswers.length < 2) {
+        return null;
+    }
+
+    // Случайно выбираем два неправильных ответа
+    const randomWrongAnswers = wrongAnswers
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 2);
+
+    // Добавляем правильный ответ
+    const answers = [{
+            text: question.answer,
+            isCorrect: true
+        },
+        ...randomWrongAnswers.map((note) => ({
+            text: note.answer,
+            isCorrect: false
+        }))
+    ];
+
+    // Перемешиваем все три варианта
+    answers.sort(() => Math.random() - 0.5);
+    return answers;
+}
+
 // Открытие выбранного теста по нажатию
 function openTest(tag, testElement) {
     selectedTag = tag;
@@ -115,20 +165,32 @@ function openTest(tag, testElement) {
     // Очищаем область теста
     testSection.replaceChildren();
 
-    renderActiveTest();
+    // Получаем случайный вопрос
+    currentQuestion = getRandomQuestion();
+
+    if (currentQuestion) {
+    // Получаем варианты ответов
+    const answers = getRandomAnswers(currentQuestion);
+
+    // Проверяем, удалось ли подобрать ответы
+    if (answers) {
+        renderActiveTest(currentQuestion, answers);
+    } else {
+        testSection.textContent = "Недостаточно заметок для формирования вариантов ответа.";
+    }
+}
 
     console.log("Выбран тест:", selectedTag);
 }
 
 // Отрисовываем HTML теста
-function renderActiveTest() {
+function renderActiveTest(question, answers) {
     // Блок с вопросом
     const questionBlock = document.createElement("div");
     questionBlock.className = "test__question";
 
     const questionTitle = document.createElement("h2");
-    questionTitle.textContent = "Здесь появится вопрос";
-
+    questionTitle.textContent = question.question;
     questionBlock.append(questionTitle);
 
     // Блок с вариантами ответов
@@ -139,7 +201,12 @@ function renderActiveTest() {
     for (let i = 1; i <= 3; i++) {
         const answerButton = document.createElement("button");
         answerButton.className = `test__answer${i}`;
-        answerButton.textContent = `Вариант ответа ${i}`;
+
+        // Выводим текст варианта ответа
+        answerButton.textContent = answers[i - 1].text;
+
+        // Сохраняем информацию о правильности ответа
+        answerButton.dataset.correct = answers[i - 1].isCorrect;
 
         answersBlock.append(answerButton);
     }
@@ -165,6 +232,5 @@ function renderActiveTest() {
         controlsBlock
     );
 }
-
 
 loadNotes();
