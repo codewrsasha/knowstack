@@ -4,6 +4,9 @@ const testSection = document.querySelector(".test");
 let notes = [];
 let selectedTag = null;
 let currentQuestion = null;
+let solvedCount = 0;
+let correctCount = 0;
+let answered = false;
 
 // Загружаем заметки из JSON-файла
 async function loadNotes() {
@@ -149,9 +152,57 @@ function getRandomAnswers(question) {
     return answers;
 }
 
+function showNextQuestion() {
+    testSection.replaceChildren();
+
+    answered = false;
+
+    currentQuestion = getRandomQuestion();
+
+    if (!currentQuestion) {
+        testSection.textContent = "Вопросы не найдены.";
+        return;
+    }
+
+    const answers = getRandomAnswers(currentQuestion);
+
+    if (answers) {
+        renderActiveTest(currentQuestion, answers);
+    } else {
+        testSection.textContent =
+            "Недостаточно заметок для формирования вариантов ответа.";
+    }
+}
+
+function finishTest() {
+    testSection.replaceChildren();
+
+    const resultTitle = document.createElement("h2");
+    resultTitle.textContent = `Результаты теста: ${selectedTag}`;
+
+    const solvedText = document.createElement("p");
+    solvedText.textContent = `Решено вопросов: ${solvedCount}`;
+
+    const correctText = document.createElement("p");
+    correctText.textContent = `Правильных ответов: ${correctCount}`;
+
+    const wrongText = document.createElement("p");
+    wrongText.textContent = `Неправильных ответов: ${solvedCount - correctCount}`;
+
+    testSection.append(
+        resultTitle,
+        solvedText,
+        correctText,
+        wrongText
+    );
+}
+
 // Открытие выбранного теста по нажатию
 function openTest(tag, testElement) {
     selectedTag = tag;
+    solvedCount = 0;
+    correctCount = 0;
+    answered = false;
 
     // Убираем выделение со всех тестов
     const testElements = testsContainer.querySelectorAll(".navbar__tags-test");
@@ -162,23 +213,7 @@ function openTest(tag, testElement) {
     // Выделяем выбранный тест
     testElement.classList.add("navbar__tags-test_active");
 
-    // Очищаем область теста
-    testSection.replaceChildren();
-
-    // Получаем случайный вопрос
-    currentQuestion = getRandomQuestion();
-
-    if (currentQuestion) {
-    // Получаем варианты ответов
-    const answers = getRandomAnswers(currentQuestion);
-
-    // Проверяем, удалось ли подобрать ответы
-    if (answers) {
-        renderActiveTest(currentQuestion, answers);
-    } else {
-        testSection.textContent = "Недостаточно заметок для формирования вариантов ответа.";
-    }
-}
+    showNextQuestion();
 
     console.log("Выбран тест:", selectedTag);
 }
@@ -202,11 +237,13 @@ function renderActiveTest(question, answers) {
         const answerButton = document.createElement("button");
         answerButton.className = `test__answer${i}`;
 
-        // Выводим текст варианта ответа
         answerButton.textContent = answers[i - 1].text;
-
-        // Сохраняем информацию о правильности ответа
+        // информация о правильном ответе
         answerButton.dataset.correct = answers[i - 1].isCorrect;
+
+        answerButton.addEventListener("click", () => {
+            checkAnswer(answersBlock, answerButton);
+        });
 
         answersBlock.append(answerButton);
     }
@@ -223,6 +260,14 @@ function renderActiveTest(question, answers) {
     finishButton.className = "test__finish";
     finishButton.textContent = "Завершить тест";
 
+    nextButton.addEventListener("click", () => {
+        showNextQuestion();
+    });
+
+    finishButton.addEventListener("click", () => {
+        finishTest();
+    });
+
     controlsBlock.append(nextButton, finishButton);
 
     // Добавляем все блоки в секцию теста
@@ -231,6 +276,33 @@ function renderActiveTest(question, answers) {
         answersBlock,
         controlsBlock
     );
+}
+
+function checkAnswer(answersBlock, selectedButton) {
+    // Если на этот вопрос уже ответили, ничего не делаем
+    if (answered) {
+        return;
+    }
+
+    answered = true;
+    solvedCount++;
+
+    // Проверяем, был ли выбран правильный ответ
+    if (selectedButton.dataset.correct === "true") {
+        correctCount++;
+    }
+
+    const answerButtons = answersBlock.querySelectorAll("button");
+
+    answerButtons.forEach((button) => {
+        if (button.dataset.correct === "true") {
+            button.classList.add("correct");
+        } else {
+            button.classList.add("wrong");
+        }
+
+        button.disabled = true;
+    });
 }
 
 loadNotes();

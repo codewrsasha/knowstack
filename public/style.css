@@ -462,3 +462,23 @@ a:clicked {
 .test__finish:active {
     transform: translateY(1px);
 }
+
+/* Правильный ответ */
+.test__answers button.correct {
+    background-color: #4caf50;
+    color: white;
+    border-color: #4caf50;
+}
+
+/* Неправильный ответ */
+.test__answers button.wrong {
+    background-color: #f44336;
+    color: white;
+    border-color: #f44336;
+}
+
+/* Заблокированные кнопки */
+.test__answers button:disabled {
+    cursor: default;
+    opacity: 1;
+}
