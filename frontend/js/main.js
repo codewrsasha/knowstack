@@ -18,7 +18,7 @@ let activeNoteId = null;
 // Загружаем заметки из JSON-файла
 async function loadNotes() {
     try {
-        const response = await fetch("./notes.json");
+        const response = await fetch("./assets/notes.json");
         notes = await response.json();
         renderNotes();
     } catch (error) {
